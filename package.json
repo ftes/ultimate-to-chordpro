@@ -1,0 +1,21 @@
+{
+  "name": "ultimate-to-chordpro",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build": "webpack --mode=production",
+    "start": "webpack-dev-server --open"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ftes/chordsheetjs": "^2.9.2"
+  },
+  "devDependencies": {
+    "acorn": "^6.1.1",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
