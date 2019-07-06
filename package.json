@@ -14,6 +14,8 @@
   },
   "devDependencies": {
     "acorn": "^6.1.1",
+    "css-loader": "^3.0.0",
+    "style-loader": "^0.23.1",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2"

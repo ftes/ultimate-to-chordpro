@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Getting Started</title>
+    <title>Ultimate Guitar to ChordPro</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <style>
-      textarea {
-        height: 400px;
-      }
-      .vertical-center {
-        margin-top: auto;
-        margin-bottom: auto;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
+    />
   </head>
   <body>
-    <div class="row">
-      <div class="col-md-5">
-        <h2>Ultimate Guitar (input)</h2>
-        <textarea id="ultimate" class="form-control">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h2>Ultimate Guitar (input)</h2>
+          <textarea id="ultimate" class="form-control">
 [Verse]
 Am               G
 Alas my love, you do me wrong
@@ -43,18 +39,32 @@ Greensleeves was my heart of gold,
     F          E7   Am
 and who but my lady Greensleeves.
         </textarea>
-      </div>
-      <div class="col-md-2 vertical-center">
-        <button id="convert" type="button" class="btn btn-primary w-100">
-          --> Convert -->
-        </button>
-      </div>
-      <div class="col-md-5">
-        <h2>ChordPro (output)</h2>
-        <textarea id="chordpro" class="form-control"></textarea>
+        </div>
+        <div class="col-md-2 vertical-center">
+          <button id="convert" type="button" class="btn btn-primary w-100">
+            Convert
+          </button>
+          <hr/>
+          <label class="switch">
+            <input type="checkbox" id="toggle" checked="true">
+            <span class="slider round"/>
+          </label>
+          when typing
+        </div>
+        <div class="col-md-5">
+          <h2>ChordPro (output)</h2>
+          <textarea id="chordpro" class="form-control"></textarea>
+        </div>
       </div>
     </div>
 
+    <a
+      class="github-fork-ribbon right-bottom fixed"
+      href="https://github.com/ftes/ultimate-to-chordpro"
+      data-ribbon="Fork me on GitHub"
+      title="Fork me on GitHub"
+      >Fork me on GitHub</a
+    >
     <script src="main.js"></script>
   </body>
 </html>

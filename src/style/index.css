@@ -1,0 +1,10 @@
+@import url('toggle.css');
+
+textarea {
+  height: 400px;
+  font-family: monospace;
+}
+.vertical-center {
+  margin-top: auto;
+  margin-bottom: auto;
+}
