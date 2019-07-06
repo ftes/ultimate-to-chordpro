@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
   <head>
     <title>Ultimate Guitar to ChordPro</title>
     <link
@@ -13,12 +13,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
     />
   </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-5">
-          <h2>Ultimate Guitar (input)</h2>
-          <textarea id="ultimate" class="form-control">
+  <body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <h2>Ultimate Guitar (input)</h2>
+            <textarea id="ultimate" class="form-control">
 [Verse]
 Am               G
 Alas my love, you do me wrong
@@ -38,25 +39,53 @@ C                   G
 Greensleeves was my heart of gold,
     F          E7   Am
 and who but my lady Greensleeves.
-        </textarea>
-        </div>
-        <div class="col-md-2 vertical-center">
-          <button id="convert" type="button" class="btn btn-primary w-100">
-            Convert
-          </button>
-          <hr/>
-          <label class="switch">
-            <input type="checkbox" id="toggle" checked="true">
-            <span class="slider round"/>
-          </label>
-          when typing
-        </div>
-        <div class="col-md-5">
-          <h2>ChordPro (output)</h2>
-          <textarea id="chordpro" class="form-control"></textarea>
+        </textarea
+            >
+          </div>
+          <div class="col-md-2 vertical-center">
+            <button id="convert" type="button" class="btn btn-primary w-100">
+              Convert
+            </button>
+            <hr />
+            <label class="switch">
+              <input type="checkbox" id="toggle" checked="true" />
+              <span class="slider round" />
+            </label>
+            when typing
+          </div>
+          <div class="col-md-5">
+            <h2>ChordPro (output)</h2>
+            <textarea id="chordpro" class="form-control"></textarea>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+      <div class="container text-muted">
+        <div class="row">
+          <div class="col-md-12">
+            <p>© 2019 Fredrik Teschke</p>
+            <p>
+              Convert
+              <a href="https://www.ultimate-guitar.com">Ultimate Guitar</a>
+              chordsheets to
+              <a
+                href="https://www.chordpro.org/chordpro/ChordPro-File-Format-Specification.html"
+                >ChordPro</a
+              >
+              notation.<br />
+              Based on
+              <a href="https://github.com/martijnversluis/ChordSheetJS"
+                >ChordSheetJS</a
+              >. Uses a
+              <a href="https://github.com/ftes/ChordSheetJS">fork</a> to support
+              Ultimate Guitar notation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <a
       class="github-fork-ribbon right-bottom fixed"

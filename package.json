@@ -5,16 +5,20 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode=production",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "prettier:watch": "onchange '**/*.{js,css,html,md}' -- prettier --write {{changed}}",
+    "prettier": "prettier **/*.{js,css,html,md} --write"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Fredrik Teschke <f@ftes.de>",
+  "license": "MIT",
   "dependencies": {
     "@ftes/chordsheetjs": "^2.9.2"
   },
   "devDependencies": {
     "acorn": "^6.1.1",
     "css-loader": "^3.0.0",
+    "onchange": "^6.0.0",
+    "prettier": "1.18.2",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5",

@@ -1,5 +1,5 @@
 import ChordSheetJS from "@ftes/chordsheetjs";
-import "./style/index.css"
+import "./style/index.css";
 
 const parser = new ChordSheetJS.UltimateGuitarParser({
   preserveWhitespace: false
