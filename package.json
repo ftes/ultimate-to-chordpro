@@ -12,7 +12,7 @@
   "author": "Fredrik Teschke <f@ftes.de>",
   "license": "MIT",
   "dependencies": {
-    "@ftes/chordsheetjs": "^2.9.2"
+    "@ftes/chordsheetjs": "^2.9.3"
   },
   "devDependencies": {
     "acorn": "^6.1.1",
