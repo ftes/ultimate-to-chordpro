@@ -4,10 +4,10 @@
     <title>Ultimate Guitar to ChordPro Converter</title>
     <meta
       name="description"
-      content="Convert Ultimate Guitar chordsheets to ChordPro notation. Ultimate Guitar uses
+      content="Convert Ultimate Guitar chordsheets to ChordPro or Latex notation. Ultimate Guitar uses
     a two line format, with the chords above the lyrics and has metadata annotations such as [Verse 1] and [Chorus]
     in square brackets. ChordPro on the other hand has inline chords in square brackets and metadata in curly brackets,
-    such as {start_of_chorus}."
+    such as {start_of_chorus}. The Latex songs package uses a similar notation, with \beginchorus"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -60,6 +60,10 @@ and who but my lady Greensleeves.
               <span class="slider round" />
             </label>
             when typing
+            <select class="form-control" id="format">
+              <option value="chordpro" selected="selected">ChordPro</option>
+              <option value="latex">Latex</option>
+            </select>
           </div>
           <div class="col-md-5">
             <h2>ChordPro (output)</h2>
@@ -82,17 +86,22 @@ and who but my lady Greensleeves.
                 href="https://www.chordpro.org/chordpro/ChordPro-File-Format-Specification.html"
                 >ChordPro</a
               >
-              notation. Ultimate Guitar uses a two line format, with the chords
-              above the lyrics and has metadata annotations such as [Verse 1]
-              and [Chorus] in square brackets. ChordPro on the other hand has
-              inline chords in square brackets and metadata in curly brackets,
-              such as {start_of_chorus}.<br />
+              or Latex
+              <a href="https://ctan.org/pkg/songs">Latex songs</a> notation.
+              Ultimate Guitar uses a two line format, with the chords above the
+              lyrics and has metadata annotations such as [Verse 1] and [Chorus]
+              in square brackets. ChordPro on the other hand has inline chords
+              in square brackets and metadata in curly brackets, such as
+              {start_of_chorus}. Latex songs uses a similar notation, for
+              example \beginchorus.<br />
               Based on
               <a href="https://github.com/martijnversluis/ChordSheetJS"
                 >ChordSheetJS</a
               >. Uses a
-              <a href="https://github.com/ftes/ChordSheetJS">fork</a> to support
-              Ultimate Guitar notation.
+              <a href="https://github.com/ftes/ChordSheetJS/tree/release"
+                >fork</a
+              >
+              to support Ultimate Guitar and Latex notation.
             </p>
           </div>
         </div>
