@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "css-loader": "^5.2.6",
+    "favicons": "^6.2.2",
     "favicons-webpack-plugin": "^5.0.2",
     "html-webpack-plugin": "^5.3.1",
     "onchange": "^6.0.0",
