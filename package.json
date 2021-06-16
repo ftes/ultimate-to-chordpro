@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack --mode=production",
+    "build": "webpack build --mode=production",
     "dev": "webpack serve --open --mode=development",
     "prettier:watch": "onchange '**/*.{js,css,html,md}' -- prettier --write {{changed}}",
     "prettier": "prettier **/*.{js,css,html,md} --write"
