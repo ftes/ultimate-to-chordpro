@@ -26,7 +26,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-5">
-            <h2>Ultimate Guitar (input)</h2>
+            <h2>Input</h2>
             <textarea id="ultimate" class="form-control">
 [Verse]
 Am               G
@@ -59,14 +59,24 @@ and who but my lady Greensleeves.
               <input type="checkbox" id="toggle" checked="true" />
               <span class="slider round" />
             </label>
-            when typing
-            <select class="form-control" id="format">
+            when typing<br />
+            From:
+            <select class="form-control" id="from-format">
+              <option value="ultimate" selected="selected">
+                Ultimate Guitar
+              </option>
+              <option value="chordpro">ChordPro</option>
+            </select>
+            <br />
+            To:
+            <select class="form-control" id="to-format">
               <option value="chordpro" selected="selected">ChordPro</option>
               <option value="latex">Latex</option>
+              <option value="ultimate">Ultimate Guitar</option>
             </select>
           </div>
           <div class="col-md-5">
-            <h2>ChordPro (output)</h2>
+            <h2>Output</h2>
             <textarea id="chordpro" class="form-control"></textarea>
           </div>
         </div>

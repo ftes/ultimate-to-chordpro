@@ -4,7 +4,15 @@
 
 https://ultimate.ftes.de
 
-Static website that converts Ultimate guitar chords to the ChordPro format.
+Static website that converts chords between different formats.
+
+Supported formats:
+
+| Format          | Input | Output |
+| --------------- | ----- | ------ |
+| ChordPro        | ✅    | ✅     |
+| Ultimate Guitar | ✅    | ✅     |
+| Latex           | ❌    | ✅     |
 
 ![Screenshot](./docs/screenshot.png)
 
@@ -12,4 +20,4 @@ Static website that converts Ultimate guitar chords to the ChordPro format.
 
 Uses [ChordSheetJS](https://github.com/martijnversluis/ChordSheetJS) to parse and format the chords and lyrics.
 
-Actually, it currently uses a [fork](https://github.com/martijnversluis/ChordSheetJS/pull/101).
+A basic Latex formatter is provided in this repo, [MR pending](https://github.com/martijnversluis/ChordSheetJS/pull/107).

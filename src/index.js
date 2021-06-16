@@ -1,20 +1,29 @@
-import ChordSheetJS from "@ftes/chordsheetjs";
+import ChordSheetJS from "chordsheetjs";
+import LatexFormatter from "./latex-formatter";
 import "./style/index.css";
 
-const parser = new ChordSheetJS.UltimateGuitarParser({
-  preserveWhitespace: false
-});
+const parsers = {
+  chordpro: new ChordSheetJS.ChordProParser(),
+  ultimate: new ChordSheetJS.UltimateGuitarParser({
+    preserveWhitespace: false,
+  }),
+};
 const formatters = {
   chordpro: new ChordSheetJS.ChordProFormatter(),
-  latex: new ChordSheetJS.LatexFormatter()
+  latex: new LatexFormatter(),
+  ultimate: new ChordSheetJS.TextFormatter(),
 };
 
 function convert() {
   const input = document.getElementById("ultimate").value;
-  const parsed = parser.parse(input);
-  const formatEl = document.getElementById("format");
-  const format = formatEl.options[formatEl.selectedIndex].value;
-  const output = formatters[format].format(parsed);
+
+  const fromFormatEl = document.getElementById("from-format");
+  const toFormatEl = document.getElementById("to-format");
+  const fromFormat = fromFormatEl.options[fromFormatEl.selectedIndex].value;
+  const toFormat = toFormatEl.options[toFormatEl.selectedIndex].value;
+
+  const parsed = parsers[fromFormat].parse(input);
+  const output = formatters[toFormat].format(parsed);
   document.getElementById("chordpro").value = output;
 }
 
@@ -31,5 +40,6 @@ function convertIfToggled() {
 document.getElementById("convert").addEventListener("click", convert);
 document.getElementById("toggle").addEventListener("change", setToggle);
 document.getElementById("ultimate").addEventListener("keyup", convertIfToggled);
-document.getElementById("format").addEventListener("change", convert);
+document.getElementById("from-format").addEventListener("change", convert);
+document.getElementById("to-format").addEventListener("change", convert);
 convert();
