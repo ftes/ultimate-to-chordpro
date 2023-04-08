@@ -7,6 +7,9 @@ const parsers = {
   ultimate: new ChordSheetJS.UltimateGuitarParser({
     preserveWhitespace: false,
   }),
+  ultimatepaste: new ChordSheetJS.UltimateGuitarParser({
+    preserveWhitespace: false,
+  }),
 };
 const formatters = {
   chordpro: new ChordSheetJS.ChordProFormatter(),
@@ -15,12 +18,16 @@ const formatters = {
 };
 
 function convert() {
-  const input = document.getElementById("ultimate").value;
 
   const fromFormatEl = document.getElementById("from-format");
   const toFormatEl = document.getElementById("to-format");
   const fromFormat = fromFormatEl.options[fromFormatEl.selectedIndex].value;
   const toFormat = toFormatEl.options[toFormatEl.selectedIndex].value;
+
+  var input = document.getElementById("ultimate").value;
+  if (fromFormat == "ultimatepaste") {
+    input = input.replaceAll("\n\n", "\n");
+  }
 
   const parsed = parsers[fromFormat].parse(input);
   const output = formatters[toFormat].format(parsed);
