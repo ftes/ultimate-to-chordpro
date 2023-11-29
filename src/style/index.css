@@ -1,6 +1,6 @@
 @import url("toggle.css");
 
-textarea {
+.convert-input, .convert-output {
   height: 400px;
   font-family: monospace;
 }
