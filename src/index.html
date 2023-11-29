@@ -23,12 +23,11 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
-    />
   </head>
   <body class="d-flex flex-column h-100">
+    <header class="text-center p-4 mb-4 bg-info text-white">
+      Need more? Create & share songbooks from your favorite tabs with <a class="text-warning" href="https://chordbook.pro">Chordbook Pro</a>.
+    </header>
     <main class="flex-shrink-0">
       <div class="container">
         <div class="row">
@@ -87,6 +86,15 @@ and who but my lady Greensleeves.
             <textarea id="chordpro" class="form-control"></textarea>
           </div>
         </div>
+        <hr class="my-4" />
+        <div class="row mt-4 justify-content-center">
+          <form name="idea" method="post" data-netlify="true" class="d-flex flex-column">
+            <h3>Missing a feature?</h3>
+            <label for="message">Let me know how this tool can be improved.</label>
+            <textarea id="message" name="message" rows="6"></textarea>
+            <button type="submit" class="mt-2 btn btn-secondary w-100">Send feedback</button>
+          </form>
+        </div>
       </div>
     </main>
 
@@ -94,7 +102,7 @@ and who but my lady Greensleeves.
       <div class="container text-muted">
         <div class="row">
           <div class="col-md-12">
-            <p>© 2019 Fredrik Teschke</p>
+            <p>© 2023 Fredrik Teschke</p>
             <p>
               Convert chordsheets between
               <a href="https://www.ultimate-guitar.com">Ultimate Guitar</a>,
@@ -119,14 +127,6 @@ and who but my lady Greensleeves.
         </div>
       </div>
     </footer>
-
-    <a
-      class="github-fork-ribbon right-bottom fixed"
-      href="https://github.com/ftes/ultimate-to-chordpro"
-      data-ribbon="Fork me on GitHub"
-      title="Fork me on GitHub"
-      >Fork me on GitHub</a
-    >
     <script src="main.js"></script>
   </body>
 </html>
