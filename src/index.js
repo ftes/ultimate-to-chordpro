@@ -1,5 +1,6 @@
 import ChordSheetJS from 'chordsheetjs'
 import LatexFormatter from './latex-formatter'
+import PlanningcenterFormatter from './planningcenter-formatter'
 import './style/index.css'
 
 const parsers = {
@@ -10,6 +11,7 @@ const parsers = {
 }
 const formatters = {
   chordpro: new ChordSheetJS.ChordProFormatter(),
+  chordpro_planningcenter: new PlanningcenterFormatter(),
   latex: new LatexFormatter(),
   ultimate: new ChordSheetJS.TextFormatter()
 }
