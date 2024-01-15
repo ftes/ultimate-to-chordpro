@@ -27,15 +27,15 @@ class PlanningcenterFormatter extends ChordSheetJS.ChordProFormatter {
     formatTag(tag) {
 
         if (tag.name == START_OF_CHORUS) {
-            return "Chorus:"
+            return "Chorus"
         }
         if ([START_OF_VERSE, START_OF_TAB].includes(tag.name)) {
-            return "Verse:"
+            return "Verse"
         }
         if (tag.hasValue()) {
-            return `${tag.value}:`;
+            return `<b>${tag.value}</b>`;
         }
-        return `${tag.originalName}:`
+        return `<b>${tag.originalName}</b>`
     }
 }
 
