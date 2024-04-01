@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html class="h-100">
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV63GT0THH"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NV63GT0THH', { client_storage: 'none' });
-    </script>
-    <title>Ultimate Guitar to ChordPro Converter</title>
-    <meta
-      name="description"
-      content="Convert Ultimate Guitar chordsheets to ChordPro or Latex notation. Ultimate Guitar uses
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TLL0QF416"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-1TLL0QF416');
+  </script>
+  <title>Ultimate Guitar to ChordPro Converter</title>
+  <meta name="description" content="Convert Ultimate Guitar chordsheets to ChordPro or Latex notation. Ultimate Guitar uses
     a two line format, with the chords above the lyrics and has metadata annotations such as [Verse 1] and [Chorus]
     in square brackets. ChordPro on the other hand has inline chords in square brackets and metadata in curly brackets,
-    such as {start_of_chorus}. The Latex songs package uses a similar notation, with \beginchorus"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body class="d-flex flex-column h-100">
-    <header class="text-center p-4 mb-4 bg-info text-white">
-      Need more? Create & share songbooks from your favorite tabs with <a class="text-warning" href="https://chordbook.pro">Chordbook Pro</a>.
-    </header>
-    <main class="flex-shrink-0">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5">
-            <h2>Input</h2>
-            <textarea id="ultimate" class="form-control convert-input">
+    such as {start_of_chorus}. The Latex songs package uses a similar notation, with \beginchorus" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body class="d-flex flex-column h-100">
+  <h1 class="text-center p-4 mb-4">
+    Ultimate guitar to ChordPro converter
+  </h1>
+  <main class="flex-shrink-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h2>Input</h2>
+          <textarea id="ultimate" class="form-control convert-input" rows="16">
 [Verse]
 Am               G
 Alas my love, you do me wrong
@@ -53,81 +49,75 @@ C                   G
 Greensleeves was my heart of gold,
     F          E7   Am
 and who but my lady Greensleeves.
-        </textarea
-            >
-          </div>
-          <div class="col-md-2 vertical-center">
-            <button id="convert" type="button" class="btn btn-primary w-100">
-              Convert
-            </button>
-            <hr />
-            <label class="switch">
-              <input type="checkbox" id="toggle" checked="true" />
-              <span class="slider round" />
-            </label>
-            when typing<br />
-            From:
-            <select class="form-control" id="from-format">
-              <option value="ultimate" selected="selected">
-                Ultimate Guitar
-              </option>
-              <option value="chordpro">ChordPro</option>
-            </select>
-            <br />
-            To:
-            <select class="form-control" id="to-format">
-              <option value="chordpro" selected="selected">ChordPro</option>
-              <option value="latex">Latex</option>
-              <option value="ultimate">Ultimate Guitar</option>
-              <option value="chordpro_planningcenter">ChordPro (Planning Center)</option>
-            </select>
-          </div>
-          <div class="col-md-5">
-            <h2>Output</h2>
-            <textarea id="chordpro" class="form-control convert-output"></textarea>
-          </div>
+        </textarea>
         </div>
-        <hr class="my-4" />
-        <div class="row my-4 justify-content-center">
-          <form name="idea" method="post" data-netlify="true" class="d-flex flex-column">
-            <h3>Missing a feature?</h3>
-            <label for="message">Let me know how this tool can be improved.</label>
-            <textarea id="message" name="message" rows="6"></textarea>
-            <button type="submit" class="mt-2 btn btn-secondary w-100">Send feedback</button>
-          </form>
+        <div class="col-md-2 vertical-center">
+          <button id="convert" type="button" class="btn btn-primary w-100">
+            Convert
+          </button>
+          <hr />
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="whitespace-toggle">
+            <label class="form-check-label" for="whitespace-toggle">remove double whitespace</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="toggle" checked>
+            <label class="form-check-label" for="toggle">when typing</label>
+          </div>
+          <hr />
+          From:
+          <select class="form-select" id="from-format">
+            <option value="ultimate" selected="selected">
+              Ultimate Guitar
+            </option>
+            <option value="chordpro">ChordPro</option>
+          </select>
+          <br />
+          To:
+          <select class="form-select" id="to-format">
+            <option value="chordpro">ChordPro</option>
+            <option value="latex">Latex</option>
+            <option value="ultimate">Ultimate Guitar</option>
+            <option value="chordpro_planningcenter" selected="selected">ChordPro (Planning Center)</option>
+          </select>
+        </div>
+        <div class="col-md-5">
+          <h2>Output</h2>
+          <textarea id="chordpro" class="form-control convert-output" rows="16"></textarea>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <footer class="footer mt-auto py-3">
-      <div class="container text-muted">
-        <div class="row">
-          <div class="col-md-12">
-            <p>© 2023 Fredrik Teschke</p>
-            <p>
-              Convert chordsheets between
-              <a href="https://www.ultimate-guitar.com">Ultimate Guitar</a>,
-              <a
-                href="https://www.chordpro.org/chordpro/ChordPro-File-Format-Specification.html"
-                >ChordPro</a
-              >
-              or
-              <a href="https://ctan.org/pkg/songs">Latex songs</a> notation.
-              Ultimate Guitar uses a two line format, with the chords above the
-              lyrics and has metadata annotations such as [Verse 1] and [Chorus]
-              in square brackets. ChordPro on the other hand has inline chords
-              in square brackets and metadata in curly brackets, such as
-              {start_of_chorus}. Latex songs uses a similar notation, for
-              example \beginchorus.<br />
-              Based on
-              <a href="https://github.com/martijnversluis/ChordSheetJS"
-                >ChordSheetJS</a
-              >.
-            </p>
-          </div>
+  <footer class="footer mt-auto py-3">
+    <div class="container text-muted">
+      <div class="row">
+        <div class="col-md-12">
+          <p>©
+            <script>document.write(new Date().getFullYear());</script> Zefanja Jobse
+          </p>
+          <p>
+            Based on <a href="https://github.com/ftes/ultimate-to-chordpro">ultimate-to-chordpro</a> from ftes, with
+            changes specific for our church.
+            Convert chordsheets between
+            <a href="https://www.ultimate-guitar.com">Ultimate Guitar</a>,
+            <a href="https://www.chordpro.org/chordpro/ChordPro-File-Format-Specification.html">ChordPro</a>
+            or
+            <a href="https://ctan.org/pkg/songs">Latex songs</a> notation.
+            Ultimate Guitar uses a two line format, with the chords above the
+            lyrics and has metadata annotations such as [Verse 1] and [Chorus]
+            in square brackets. ChordPro on the other hand has inline chords
+            in square brackets and metadata in curly brackets, such as
+            {start_of_chorus}. Latex songs uses a similar notation, for
+            example \beginchorus.<br />
+            Based on
+            <a href="https://github.com/martijnversluis/ChordSheetJS">ChordSheetJS</a>.
+          </p>
         </div>
       </div>
-    </footer>
-    <script src="main.js"></script>
-  </body>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+
 </html>

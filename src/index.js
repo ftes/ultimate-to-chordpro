@@ -16,13 +16,18 @@ const formatters = {
   ultimate: new ChordSheetJS.TextFormatter()
 }
 
-function convert () {
-  const input = document.getElementById('ultimate').value
+function convert() {
+  let input = document.getElementById('ultimate').value
 
   const fromFormatEl = document.getElementById('from-format')
   const toFormatEl = document.getElementById('to-format')
   const fromFormat = fromFormatEl.options[fromFormatEl.selectedIndex].value
   const toFormat = toFormatEl.options[toFormatEl.selectedIndex].value
+
+  let whitespaceToggleState = document.getElementById('whitespace-toggle').checked
+  if (whitespaceToggleState) {
+    input = input.replaceAll("\n\n", "\n");
+  }
 
   const parsed = parsers[fromFormat].parse(input)
   const output = formatters[toFormat].format(parsed)
@@ -30,10 +35,10 @@ function convert () {
 }
 
 let toggleState = document.getElementById('toggle').checked
-function setToggle (e) {
+function setToggle(e) {
   toggleState = e.target.checked
 }
-function convertIfToggled () {
+function convertIfToggled() {
   if (toggleState) {
     convert()
   }
