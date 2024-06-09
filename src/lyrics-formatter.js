@@ -1,11 +1,11 @@
-import ChordSheetJS from 'chordsheetjs'
+import ChordSheetJS, { ChordLyricsPair } from 'chordsheetjs'
 
 const NEW_LINE = '\n'
 
 /**
- * Formats song to planningcenter format
+ * Formats song to OPS format
  */
-class PlanningcenterFormatter extends ChordSheetJS.ChordProFormatter {
+class LyricsFormatter extends ChordSheetJS.ChordProFormatter {
     format(song) {
         const { lines, metadata } = song;
 
@@ -16,18 +16,27 @@ class PlanningcenterFormatter extends ChordSheetJS.ChordProFormatter {
             .join(NEW_LINE);
     }
 
-    formatTag(tag) {
+    formatItem(item, metadata) {
+        if (item instanceof ChordLyricsPair) {
+            return this.formatChordLyricsPairLyrics(item);
+        }
+
+        return super.formatItem(item, metadata)
+    }
+
+    formatTag(tag) { // if tag exists in OPS
+
         if (tag.name == "start_of_chorus") {
-            return "Chorus"
+            return "Chorus:"
         }
         if (["start_of_verse", "start_of_tab"].includes(tag.name)) {
-            return "Verse"
+            return "Verse:"
         }
         if (tag.hasValue()) {
-            return `<b>${tag.value}</b>`;
+            return `${tag.value}:`;
         }
-        return `<b>${tag.originalName}</b>`
+        return `${tag.originalName}:`
     }
 }
 
-export default PlanningcenterFormatter
+export default LyricsFormatter

@@ -1,15 +1,4 @@
-import Tag, {
-  ARTIST,
-  TITLE,
-  SUBTITLE,
-  COMMENT,
-  CAPO,
-  START_OF_CHORUS,
-  END_OF_CHORUS,
-  START_OF_VERSE,
-  END_OF_VERSE
-} from 'chordsheetjs/lib/chord_sheet/tag'
-import ChordLyricsPair from 'chordsheetjs/lib/chord_sheet/chord_lyrics_pair'
+import { ChordLyricsPair, Tag } from 'chordsheetjs'
 
 const NEW_LINE = '\n'
 const flatMap = (arr, fn) => arr.reduce((acc, x) => [...acc, ...fn(x)], [])
@@ -19,9 +8,9 @@ const flatMap = (arr, fn) => arr.reduce((acc, x) => [...acc, ...fn(x)], [])
  * http://songs.sourceforge.net/docs.html
  */
 class LatexFormatter {
-  isHeaderTag (item) {
+  isHeaderTag(item) {
     return (
-      item instanceof Tag && [TITLE, SUBTITLE, ARTIST].indexOf(item.name) !== -1
+      item instanceof Tag && ["title", "subtitle", "artist"].indexOf(item.name) !== -1
     )
   }
 
@@ -30,7 +19,7 @@ class LatexFormatter {
    * @param {Song} song The song to be formatted
    * @returns {string} The .tex file contents as string
    */
-  format (song) {
+  format(song) {
     return [
       this.formatHeaderTags(song),
       this.formatOther(song),
@@ -38,7 +27,7 @@ class LatexFormatter {
     ].join(NEW_LINE)
   }
 
-  formatHeaderTags (song) {
+  formatHeaderTags(song) {
     const headerTags = flatMap(song.lines, (line) => line.items)
       .filter(this.isHeaderTag)
       .reduce(
@@ -55,15 +44,15 @@ class LatexFormatter {
     return `\\beginsong{${titleString}}[by={${artist}}]`
   }
 
-  formatOther (song) {
+  formatOther(song) {
     return song.lines.map((line) => this.formatLine(line)).join(NEW_LINE)
   }
 
-  formatLine (line) {
+  formatLine(line) {
     return line.items.map((item) => this.formatItem(item)).join('')
   }
 
-  formatItem (item) {
+  formatItem(item) {
     if (this.isHeaderTag(item)) {
       return ''
     } else if (item instanceof Tag) {
@@ -75,19 +64,19 @@ class LatexFormatter {
     return ''
   }
 
-  formatTag (tag) {
+  formatTag(tag) {
     switch (tag.name) {
-      case COMMENT:
+      case "comment":
         return `\\textcomment{${tag.value}}`
-      case CAPO:
+      case "capo":
         return `\\capo{${tag.value}}`
-      case START_OF_CHORUS:
+      case "start_of_chorus":
         return '\\beginchorus'
-      case END_OF_CHORUS:
+      case "end_of_chorus":
         return '\\endchorus'
-      case START_OF_VERSE:
+      case "start_of_verse":
         return '\\beginverse'
-      case END_OF_VERSE:
+      case "end_of_verse":
         return '\\endverse'
       default:
         return tag.hasValue()
@@ -96,14 +85,14 @@ class LatexFormatter {
     }
   }
 
-  formatChordLyricsPair (chordLyricsPair) {
+  formatChordLyricsPair(chordLyricsPair) {
     return [
       this.formatChordLyricsPairChords(chordLyricsPair),
       this.formatChordLyricsPairLyrics(chordLyricsPair)
     ].join('')
   }
 
-  formatChordLyricsPairChords (chordLyricsPair) {
+  formatChordLyricsPairChords(chordLyricsPair) {
     if (chordLyricsPair.chords) {
       return `\\[${chordLyricsPair.chords}]`
     }
@@ -111,7 +100,7 @@ class LatexFormatter {
     return ''
   }
 
-  formatChordLyricsPairLyrics (chordLyricsPair) {
+  formatChordLyricsPairLyrics(chordLyricsPair) {
     return chordLyricsPair.lyrics || ''
   }
 }

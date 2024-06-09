@@ -8,9 +8,9 @@ module.exports = {
     }),
     new FaviconsWebpackPlugin('./src/image/guitar.png')
   ],
-  devServer: {
-    contentBase: './dist'
-  },
+  // devServer: {
+  //   contentBase: './dist'
+  // },
   module: {
     rules: [
       {
