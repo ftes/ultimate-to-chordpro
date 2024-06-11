@@ -31,9 +31,9 @@ function convert() {
     input = input.replaceAll("\n\n", "\n");
   }
 
-  const tranposeAmount = document.getElementById("transpose-amount").value
+  const transposeAmount = document.getElementById("transpose-amount").value
 
-  const parsed = parsers[fromFormat].parse(input).transpose(tranposeAmount)
+  const parsed = parsers[fromFormat].parse(input).transpose(transposeAmount)
   const output = formatters[toFormat].format(parsed)
   document.getElementById('chordpro').value = output
 }
