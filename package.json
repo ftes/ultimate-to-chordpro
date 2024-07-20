@@ -12,18 +12,22 @@
   "author": "Fredrik Teschke <f@ftes.de>",
   "license": "MIT",
   "dependencies": {
-    "chordsheetjs": "^4.7.1"
+    "bootstrap": "^5.3.3",
+    "chordsheetjs": "^10.1.0"
   },
   "devDependencies": {
-    "css-loader": "^5.2.6",
-    "favicons": "^6.2.2",
-    "favicons-webpack-plugin": "^5.0.2",
-    "html-webpack-plugin": "^5.3.1",
-    "onchange": "^6.0.0",
-    "prettier": "^2.3.1",
-    "style-loader": "^2.0.0",
-    "webpack": "^5.39.0",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "favicons": "^7.2.0",
+    "favicons-webpack-plugin": "^6.0.1",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "onchange": "^7.1.0",
+    "prettier": "^3.3.1",
+    "purgecss-webpack-plugin": "^6.0.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   }
 }

@@ -1,7 +1,4 @@
-@import url("toggle.css");
-
-.convert-input, .convert-output {
-  height: 400px;
+.convert-input, .convert-output, .modal-body {
   font-family: monospace;
 }
 
