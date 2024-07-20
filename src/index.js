@@ -3,6 +3,8 @@ import { ChordProFormatter, ChordProParser, TextFormatter, UltimateGuitarParser 
 import LatexFormatter from './latex-formatter';
 import LyricsFormatter from "./lyrics-formatter";
 import PlanningcenterFormatter from './planningcenter-formatter';
+import "./style/bootstrap.min.css";
+import "./style/index.css";
 
 function convert() {
   const parsers = {
