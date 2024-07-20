@@ -1,11 +1,11 @@
-import ChordSheetJS from 'chordsheetjs'
+import { ChordProFormatter } from 'chordsheetjs';
 
 const NEW_LINE = '\n'
 
 /**
  * Formats song to planningcenter format
  */
-class PlanningcenterFormatter extends ChordSheetJS.ChordProFormatter {
+class PlanningcenterFormatter extends ChordProFormatter {
     format(song) {
         const { lines, metadata } = song;
 

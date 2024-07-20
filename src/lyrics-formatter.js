@@ -1,11 +1,11 @@
-import ChordSheetJS, { ChordLyricsPair } from 'chordsheetjs'
+import { ChordLyricsPair, ChordProFormatter } from 'chordsheetjs';
 
 const NEW_LINE = '\n'
 
 /**
  * Formats song to OPS format
  */
-class LyricsFormatter extends ChordSheetJS.ChordProFormatter {
+class LyricsFormatter extends ChordProFormatter {
     format(song) {
         const { lines, metadata } = song;
 

@@ -1,23 +1,22 @@
 import { Modal } from 'bootstrap';
-import ChordSheetJS from 'chordsheetjs';
+import { ChordProFormatter, ChordProParser, TextFormatter, UltimateGuitarParser } from 'chordsheetjs';
 import LatexFormatter from './latex-formatter';
 import LyricsFormatter from "./lyrics-formatter";
 import PlanningcenterFormatter from './planningcenter-formatter';
-import './style/index.css';
 
 function convert() {
   const parsers = {
-    chordpro: new ChordSheetJS.ChordProParser(),
-    ultimate: new ChordSheetJS.UltimateGuitarParser({
+    chordpro: new ChordProParser(),
+    ultimate: new UltimateGuitarParser({
       preserveWhitespace: false
     })
   }
   const formatters = {
-    chordpro: new ChordSheetJS.ChordProFormatter(),
+    chordpro: new ChordProFormatter(),
     chordpro_planningcenter: new PlanningcenterFormatter(),
     lyrics: new LyricsFormatter(),
     latex: new LatexFormatter(),
-    ultimate: new ChordSheetJS.TextFormatter()
+    ultimate: new TextFormatter()
   }
 
   let input = document.getElementById('ultimate').value
