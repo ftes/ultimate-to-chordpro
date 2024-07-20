@@ -50,6 +50,7 @@ Greensleeves was my heart of gold,
     F          E7   Am
 and who but my lady Greensleeves.
         </textarea>
+          <button type="button" class="btn btn-primary mt-2" id="fullscreen-input">Fullscreen</button>
         </div>
         <div class="col-md-2 vertical-center">
           <button id="convert" type="button" class="btn btn-primary w-100">
@@ -82,14 +83,25 @@ and who but my lady Greensleeves.
             <option value="chordpro_planningcenter" selected="selected">ChordPro (Planning Center)</option>
           </select>
           <br />
-          <div class="form-group">
-            <label class="form-label" for="transpose-amount">Transpose</label>
-            <input type="number" id="transpose-amount" class="form-control" value="0" />
-          </div>
+          Transpose:
+          <select class="form-select" id="transpose-amount">
+            <option value="-5">-5</option>
+            <option value="-4">-4</option>
+            <option value="-3">-3</option>
+            <option value="-2">-2</option>
+            <option value="-1">-1</option>
+            <option value="0" selected>0</option>
+            <option value="1">+1</option>
+            <option value="2">+2</option>
+            <option value="3">+3</option>
+            <option value="4">+4</option>
+            <option value="5">+5</option>
+          </select>
         </div>
         <div class="col-md-5">
           <h2>Output</h2>
           <textarea id="chordpro" class="form-control convert-output" rows="16"></textarea>
+          <button type="button" class="btn btn-primary mt-2" id="fullscreen-output">Fullscreen</button>
         </div>
       </div>
     </div>
@@ -123,6 +135,23 @@ and who but my lady Greensleeves.
       </div>
     </div>
   </footer>
+
+  <div class="modal" id="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-fullscreen-lg-down" role=" document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close-modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="main.js"></script>
 </body>
 

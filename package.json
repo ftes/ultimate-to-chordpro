@@ -12,6 +12,7 @@
   "author": "Fredrik Teschke <f@ftes.de>",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "chordsheetjs": "^10.1.0"
   },
   "devDependencies": {
