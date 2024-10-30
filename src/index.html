@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html class="h-100">
   <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV63GT0THH"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NV63GT0THH"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NV63GT0THH', { client_storage: 'none' });
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-NV63GT0THH", { client_storage: "none" });
     </script>
     <title>Ultimate Guitar to ChordPro Converter</title>
     <meta
@@ -25,9 +30,6 @@
     />
   </head>
   <body class="d-flex flex-column h-100">
-    <header class="text-center p-4 mb-4 bg-info text-white">
-      Need more? Create & share songbooks from your favorite tabs with <a class="text-warning" href="https://chordbook.pro">Chordbook Pro</a>.
-    </header>
     <main class="flex-shrink-0">
       <div class="container">
         <div class="row">
@@ -83,16 +85,28 @@ and who but my lady Greensleeves.
           </div>
           <div class="col-md-5">
             <h2>Output</h2>
-            <textarea id="chordpro" class="form-control convert-output"></textarea>
+            <textarea
+              id="chordpro"
+              class="form-control convert-output"
+            ></textarea>
           </div>
         </div>
         <hr class="my-4" />
         <div class="row my-4 justify-content-center">
-          <form name="idea" method="post" data-netlify="true" class="d-flex flex-column">
+          <form
+            name="idea"
+            method="post"
+            data-netlify="true"
+            class="d-flex flex-column"
+          >
             <h3>Missing a feature?</h3>
-            <label for="message">Let me know how this tool can be improved.</label>
+            <label for="message"
+              >Let me know how this tool can be improved.</label
+            >
             <textarea id="message" name="message" rows="6"></textarea>
-            <button type="submit" class="mt-2 btn btn-secondary w-100">Send feedback</button>
+            <button type="submit" class="mt-2 btn btn-secondary w-100">
+              Send feedback
+            </button>
           </form>
         </div>
       </div>
