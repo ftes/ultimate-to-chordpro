@@ -1,6 +1,7 @@
 @import url("toggle.css");
 
-.convert-input, .convert-output {
+.convert-input,
+.convert-output {
   height: 400px;
   font-family: monospace;
 }
